@@ -17,20 +17,21 @@ async function loadModel() {
     const model = await tf.loadLayersModel('file://models/model.json');
     model.summary();
 
-    // Create an input tensor
-    const input = tf.tensor2d(["i love you"], [1, 1]);
+    // // Create an input tensor
+    // const input = tf.tensor2d(["i love you"], [1, 1]);
 
-    // Make a prediction
-    const prediction = model.predict(input);
+    // // Make a prediction
+    // const prediction = model.predict(input);
 
-    // Log the prediction
-    prediction.print();
+    // // Log the prediction
+    // prediction.print();
 
   }
   
 loadModel();
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 app.get('/', function(req, res) {
     res.send("hello world!");
@@ -45,12 +46,14 @@ app.get('/sentiment', (req,res)=>{
 
     req.query.sentence?sentiment = req.query.sentence:"";
 
-
-
     res.send(sentiment);
 });
 
 
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+//RUNNING SERVER AT PORT 2000
 app.listen(port,()=>{
     console.log('listening on port ' + port);
 });
